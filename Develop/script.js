@@ -1,7 +1,16 @@
 // Assignment code here
+var passwordLength = 0;
+
+
 function generatePassword() {
+  getPasswordLength();
+
+}
+
+// GET PASSWORD LENGTH
+function getPasswordLength() {
   // ask password length 
-  const passwordLength = prompt("Enter a number between 8 and 128", "8");
+  passwordLength = prompt("Enter a number between 8 and 128", "8");
   console.log(passwordLength);
 
   // validate password length 
@@ -14,10 +23,11 @@ function generatePassword() {
   } else if (isNaN(passwordLength)) {
     window.alert("You need to provide a valid answer! Please try again.");
     return generatePassword();
-  }
-
+  };
 
 }
+
+console.log(passwordLength);
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");

@@ -1,12 +1,27 @@
 // Assignment code here
+
+// DEFINE VARIABLES
 var passwordLength = 0;
 var characters = "";
+var randomPass = "";
 var lowercase = "abcdefghijklmnopqrstuvwxyz";
 var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "1234567890";
 var specialChar = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 
+// GENERATE RANDOM PASSWORD 
 function generatePassword() {
+  randomPass = "";
+  prompts();
+
+  for (var i = 0; i <= passwordLength; i++) {
+    var randomize = Math.floor(Math.random() * characters.length);
+    randomPass += characters.substring(randomize, randomize + 1);
+  }
+
+}
+
+function prompts() {
   characters = "";
   getPasswordLength();
   getLowercase();
@@ -36,6 +51,7 @@ function getPasswordLength() {
 
 }
 
+// VERIFY CHARACTER TYPES 
 function getLowercase() {
   var getLower = window.confirm("Lowercase");
   if (getLower) {
@@ -71,15 +87,18 @@ function getSpecial() {
 function verifyChar() {
   if (characters === "") {
     window.alert("You must select at least one type of character.");
-    generatePassword();
+    prompts();
   }
 }
+
+// END VERIFY CHARACTER TYPES 
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
+
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 

@@ -1,4 +1,4 @@
-# Password Generator Starter Code
+# Password Generator
 
 This challenge was to work in existing started code and add the necessary JavaScript in order to meet certain criteria for developing a random password. The user is given a series of prompts to confirm the criteria they want included in their password including length, lowercase, uppercase, numbers and special characters. Once the criteria is defined a random password is generated to meet this criteria and is displayed on the screen.
 

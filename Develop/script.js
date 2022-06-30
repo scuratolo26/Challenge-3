@@ -34,7 +34,7 @@ function prompts() {
 // GET PASSWORD LENGTH
 function getPasswordLength() {
   // ask password length 
-  passwordLength = prompt("Enter a number between 8 and 128", "8");
+  passwordLength = prompt("How long would you like your password to be? Enter a number between 8 and 128", "8");
   console.log(passwordLength);
 
   // validate password length 
@@ -53,7 +53,7 @@ function getPasswordLength() {
 
 // VERIFY CHARACTER TYPES 
 function getLowercase() {
-  var getLower = window.confirm("Lowercase");
+  var getLower = window.confirm("Would you like your password to include LOWERCASE characters? Click 'OK' for yes, 'Cancel' for no.");
   if (getLower) {
     characters = characters + lowercase;
     console.log(characters);
@@ -61,7 +61,7 @@ function getLowercase() {
 }
 
 function getUppercase() {
-  var getUpper = window.confirm("Uppercase");
+  var getUpper = window.confirm("Would you like your password to include UPPERCASE characters? Click 'OK' for yes, 'Cancel' for no.");
   if (getUpper) {
     characters = characters + uppercase;
     console.log(characters);
@@ -69,7 +69,7 @@ function getUppercase() {
 }
 
 function getNumeric() {
-  var getNum = window.confirm("Numbers");
+  var getNum = window.confirm("Would you like your password to include NUMBERS? Click 'OK' for yes, 'Cancel' for no.");
   if (getNum) {
     characters = characters + numbers;
     console.log(characters);
@@ -77,7 +77,6 @@ function getNumeric() {
 }
 
 function getSpecial() {
-  var getSpecialChar = window.confirm("Special Characters");
   if (getSpecialChar) {
     characters = characters + specialChar;
     console.log(characters);

@@ -18,7 +18,7 @@ function generatePassword() {
     var randomize = Math.floor(Math.random() * characters.length);
     randomPass += characters.substring(randomize, randomize + 1);
   }
-
+  return randomPass;
 }
 
 function prompts() {

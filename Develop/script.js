@@ -12,8 +12,9 @@ var specialChar = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 // GENERATE RANDOM PASSWORD 
 function generatePassword() {
   randomPass = "";
+  characters = "";
   prompts();
-
+  passwordLength = passwordLength - 1;
   for (var i = 0; i <= passwordLength; i++) {
     var randomize = Math.floor(Math.random() * characters.length);
     randomPass += characters.substring(randomize, randomize + 1);
@@ -22,13 +23,12 @@ function generatePassword() {
 }
 
 function prompts() {
-  characters = "";
   getPasswordLength();
   getLowercase();
   getUppercase();
   getNumeric();
+  getSpecialChar();
   verifyChar();
-  getSpecial();
 }
 
 // GET PASSWORD LENGTH
@@ -76,8 +76,9 @@ function getNumeric() {
   }
 }
 
-function getSpecial() {
-  if (getSpecialChar) {
+function getSpecialChar() {
+  var getSpecial = window.confirm("Would you like your password to include SPECIAL CHARACTERS? Click 'OK' for yes, 'Cancel' for no.");
+  if (getSpecial) {
     characters = characters + specialChar;
     console.log(characters);
   }

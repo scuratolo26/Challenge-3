@@ -1,10 +1,19 @@
 // Assignment code here
 var passwordLength = 0;
-
+var characters = "";
+var lowercase = "abcdefghijklmnopqrstuvwxyz";
+var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numbers = "1234567890";
+var specialChar = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 
 function generatePassword() {
+  characters = "";
   getPasswordLength();
-
+  getLowercase();
+  getUppercase();
+  getNumeric();
+  verifyChar();
+  getSpecial();
 }
 
 // GET PASSWORD LENGTH
@@ -27,7 +36,44 @@ function getPasswordLength() {
 
 }
 
-console.log(passwordLength);
+function getLowercase() {
+  var getLower = window.confirm("Lowercase");
+  if (getLower) {
+    characters = characters + lowercase;
+    console.log(characters);
+  }
+}
+
+function getUppercase() {
+  var getUpper = window.confirm("Uppercase");
+  if (getUpper) {
+    characters = characters + uppercase;
+    console.log(characters);
+  }
+}
+
+function getNumeric() {
+  var getNum = window.confirm("Numbers");
+  if (getNum) {
+    characters = characters + numbers;
+    console.log(characters);
+  }
+}
+
+function getSpecial() {
+  var getSpecialChar = window.confirm("Special Characters");
+  if (getSpecialChar) {
+    characters = characters + specialChar;
+    console.log(characters);
+  }
+}
+
+function verifyChar() {
+  if (characters === "") {
+    window.alert("You must select at least one type of character.");
+    generatePassword();
+  }
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
